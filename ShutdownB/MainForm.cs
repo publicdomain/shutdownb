@@ -55,12 +55,20 @@ namespace ShutdownB
 
         }
 
+        /// <summary>
+        /// Handles the main form load.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
         private void OnMainFormLoad(object sender, EventArgs e)
         {
+            // Declare the cursor point
             var cursorPoint = new Point();
 
+            // Poplate it
             GetCursorPos(ref cursorPoint);
 
+            // Show the context menu strips
             this.mainContextMenuStrip.Show(cursorPoint.X, cursorPoint.Y);
         }
 
