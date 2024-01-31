@@ -137,7 +137,16 @@ namespace ShutdownB
         /// <param name="e">Event arguments.</param>
         private void OnHibernateToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // Issue command
+            // Issue hibernation
+            this.HibernateNow();
+
+        }
+
+        /// <summary>
+        /// Hibernates immediately.
+        /// </summary>
+        private void HibernateNow()
+        {
             SetSuspendState(true, true, true);
         }
 
@@ -148,7 +157,15 @@ namespace ShutdownB
         /// <param name="e">Event arguments.</param>
         private void OnSleepToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // Issue command
+            // Issue sleep
+            this.SleepNow();
+        }
+
+        /// <summary>
+        /// Sleeps immediately.
+        /// </summary>
+        private void SleepNow()
+        {
             SetSuspendState(false, true, true);
         }
 
