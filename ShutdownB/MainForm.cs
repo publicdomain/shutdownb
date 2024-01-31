@@ -139,9 +139,15 @@ namespace ShutdownB
             this.TopMost = this.alwaysOnTopToolStripMenuItem.Checked;
         }
 
+        /// <summary>
+        /// Handles the exit tool strip menu item click.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
         private void OnExitToolStripMenuItemClick(object sender, EventArgs e)
         {
-
+            // Close program        
+            this.Close();
         }
     }
 }
