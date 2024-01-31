@@ -195,7 +195,15 @@ namespace ShutdownB
         /// <param name="e">Event arguments.</param>
         private void OnLogOffToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // Issue command
+            // Issue log off command
+            this.LogoffNow();
+        }
+
+        /// <summary>
+        /// Logs off immediately.
+        /// </summary>
+        private void LogoffNow()
+        {
             ExitWindowsEx(0, 0);
         }
 
