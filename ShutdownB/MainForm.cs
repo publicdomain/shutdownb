@@ -93,7 +93,7 @@ namespace ShutdownB
             // Poplate it
             GetCursorPos(ref cursorPoint);
 
-            // Show the context menu strips
+            // TODO Show the context menu strip [Can be replaced by ContextMenu]
             this.mainContextMenuStrip.Show(cursorPoint.X, cursorPoint.Y);
         }
 
@@ -169,8 +169,20 @@ namespace ShutdownB
         /// <param name="e">Event arguments.</param>
         private void OnRestartToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // Issue command
-            Process.Start("shutdown", "/r /t 0");
+            // Issue restart
+            this.RestartNow();
+        }
+
+        /// <summary>
+        /// Restarts immediately.
+        /// </summary>
+        private void RestartNow()
+        {
+            Process process = new Process();
+            process.StartInfo.FileName = "shutdown";
+            process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            process.StartInfo.Arguments = "/r /t 0";
+            process.Start();
         }
 
         private void OnTimerToolStripMenuItemDropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
