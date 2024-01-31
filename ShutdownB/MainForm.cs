@@ -114,8 +114,20 @@ namespace ShutdownB
         /// <param name="e">Event arguments.</param>
         private void OnShutDownToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // Issue command
-            Process.Start("shutdown", "/s /t 0");
+            // Issue shut down
+            this.ShutdownNow();
+        }
+
+        /// <summary>
+        /// Shutdowns immediately.
+        /// </summary>
+        private void ShutdownNow()
+        {
+            Process process = new Process();
+            process.StartInfo.FileName = "shutdown";
+            process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            process.StartInfo.Arguments = "/s /t 0";
+            process.Start();
         }
 
         /// <summary>
