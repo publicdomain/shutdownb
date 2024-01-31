@@ -103,9 +103,15 @@ namespace ShutdownB
 
         }
 
+        /// <summary>
+        /// Handles the cancel button click.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
         private void OnCancelButtonClick(object sender, EventArgs e)
         {
-
+            // Close program        
+            this.Close();
         }
 
         private void OnSubtractButtonClick(object sender, EventArgs e)
