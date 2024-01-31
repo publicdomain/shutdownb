@@ -35,6 +35,21 @@ namespace ShutdownB
         static extern bool GetCursorPos(ref Point lpPoint);
 
         /// <summary>
+        /// Locks the work station.
+        /// </summary>
+        [DllImport("user32")]
+        public static extern void LockWorkStation();
+
+        /// <summary>
+        /// Exits the windows ex.
+        /// </summary>
+        /// <returns><c>true</c>, if windows ex was exited, <c>false</c> otherwise.</returns>
+        /// <param name="uFlags">U flags.</param>
+        /// <param name="dwReason">Dw reason.</param>
+        [DllImport("user32")]
+        public static extern bool ExitWindowsEx(uint uFlags, uint dwReason);
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="T:ShutdownB.MainForm"/> class.
         /// </summary>
         public MainForm()
@@ -110,7 +125,8 @@ namespace ShutdownB
         /// <param name="e">Event arguments.</param>
         private void OnLockToolStripMenuItemClick(object sender, EventArgs e)
         {
-
+            // Issue command
+            LockWorkStation();
         }
 
         /// <summary>
@@ -140,6 +156,7 @@ namespace ShutdownB
         /// <param name="e">Event arguments.</param>
         private void OnRestartToolStripMenuItemClick(object sender, EventArgs e)
         {
+            // Issue command
             Process.Start("shutdown", "/r /t 0");
         }
 
