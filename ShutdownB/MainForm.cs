@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Input;
@@ -140,6 +141,28 @@ namespace ShutdownB
         }
 
         /// <summary>
+        /// Handles the original thread donation codercom tool strip menu item click.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
+        private void OnOriginalThreadDonationCodercomToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            // Open original thread
+            Process.Start("https://www.donationcoder.com/forum/index.php?topic=53917.0");
+        }
+
+        /// <summary>
+        /// Handles the source code githubcom tool strip menu item click.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
+        private void OnSourceCodeGithubcomToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            // Open GitHub repository
+            Process.Start("https://github.com/publicdomain/shutdownb/");
+        }
+
+        /// <summary>
         /// Handles the exit tool strip menu item click.
         /// </summary>
         /// <param name="sender">Sender object.</param>
@@ -149,5 +172,6 @@ namespace ShutdownB
             // Close program        
             this.Close();
         }
+
     }
 }
