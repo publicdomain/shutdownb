@@ -41,6 +41,16 @@ namespace ShutdownB
         public static extern void LockWorkStation();
 
         /// <summary>
+        /// Sets the state of the suspend.
+        /// </summary>
+        /// <returns><c>true</c>, if suspend state was set, <c>false</c> otherwise.</returns>
+        /// <param name="hiberate">If set to <c>true</c> hiberate.</param>
+        /// <param name="forceCritical">If set to <c>true</c> force critical.</param>
+        /// <param name="disableWakeEvent">If set to <c>true</c> disable wake event.</param>
+        [DllImport("PowrProf.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
+        public static extern bool SetSuspendState(bool hiberate, bool forceCritical, bool disableWakeEvent);
+
+        /// <summary>
         /// Exits the windows ex.
         /// </summary>
         /// <returns><c>true</c>, if windows ex was exited, <c>false</c> otherwise.</returns>
@@ -115,7 +125,8 @@ namespace ShutdownB
         /// <param name="e">Event arguments.</param>
         private void OnHibernateToolStripMenuItemClick(object sender, EventArgs e)
         {
-
+            // Issue command
+            SetSuspendState(true, true, true);
         }
 
         /// <summary>
