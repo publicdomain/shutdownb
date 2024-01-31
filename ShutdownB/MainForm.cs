@@ -133,9 +133,14 @@ namespace ShutdownB
 
         }
 
+        /// <summary>
+        /// Handle the restart tool strip menu item click.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
         private void OnRestartToolStripMenuItemClick(object sender, EventArgs e)
         {
-
+            Process.Start("shutdown", "/r /t 0");
         }
 
         private void OnTimerToolStripMenuItemDropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
