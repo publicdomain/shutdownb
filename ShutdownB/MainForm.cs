@@ -82,26 +82,52 @@ namespace ShutdownB
 
         }
 
+        /// <summary>
+        /// Handles the shut down tool strip menu item click.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
         private void OnShutDownToolStripMenuItemClick(object sender, EventArgs e)
         {
-
+            // Issue command
+            Process.Start("shutdown", "/s /t 0");
         }
 
+        /// <summary>
+        /// Ons the hibernate tool strip menu item click.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
         private void OnHibernateToolStripMenuItemClick(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Ons the lock tool strip menu item click.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
         private void OnLockToolStripMenuItemClick(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Ons the log off tool strip menu item click.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
         private void OnLogOffToolStripMenuItemClick(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Ons the sleep tool strip menu item click.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
         private void OnSleepToolStripMenuItemClick(object sender, EventArgs e)
         {
 
