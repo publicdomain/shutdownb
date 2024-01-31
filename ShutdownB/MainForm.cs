@@ -119,7 +119,7 @@ namespace ShutdownB
         }
 
         /// <summary>
-        /// Ons the hibernate tool strip menu item click.
+        /// Handles the hibernate tool strip menu item click.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
@@ -130,7 +130,18 @@ namespace ShutdownB
         }
 
         /// <summary>
-        /// Ons the lock tool strip menu item click.
+        /// Handles the sleep tool strip menu item click.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
+        private void OnSleepToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            // Issue command
+            SetSuspendState(false, true, true);
+        }
+
+        /// <summary>
+        /// Handles the lock tool strip menu item click.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
@@ -141,7 +152,7 @@ namespace ShutdownB
         }
 
         /// <summary>
-        /// Ons the log off tool strip menu item click.
+        /// Handles the log off tool strip menu item click.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
@@ -149,16 +160,6 @@ namespace ShutdownB
         {
             // Issue command
             ExitWindowsEx(0, 0);
-        }
-
-        /// <summary>
-        /// Ons the sleep tool strip menu item click.
-        /// </summary>
-        /// <param name="sender">Sender object.</param>
-        /// <param name="e">Event arguments.</param>
-        private void OnSleepToolStripMenuItemClick(object sender, EventArgs e)
-        {
-
         }
 
         /// <summary>
