@@ -157,7 +157,7 @@ namespace ShutdownB
         /// <param name="e">Event arguments.</param>
         private void OnSleepToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // Issue sleep
+            // Issue sleep command
             this.SleepNow();
         }
 
