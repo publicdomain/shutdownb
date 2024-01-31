@@ -176,7 +176,15 @@ namespace ShutdownB
         /// <param name="e">Event arguments.</param>
         private void OnLockToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // Issue command
+            // Issue lock command
+            this.LockNow();
+        }
+
+        /// <summary>
+        /// Locks immediately.
+        /// </summary>
+        private void LockNow()
+        {
             LockWorkStation();
         }
 
