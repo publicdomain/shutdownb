@@ -570,7 +570,11 @@ namespace ShutdownB
         /// <param name="e">Event arguments.</param>
         private void OnActionComboBoxSelectedIndexChanged(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Update action
+            this.actionName = this.actionComboBox.GetItemText(actionComboBox.SelectedItem); ;
+
+            // Set the label immediately
+            this.SetTimerLabel();
         }
 
         /// <summary>
