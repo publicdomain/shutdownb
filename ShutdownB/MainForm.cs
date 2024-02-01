@@ -191,8 +191,8 @@ namespace ShutdownB
             // Set action combo box to matching item
             this.actionComboBox.SelectedIndex = this.actionComboBox.FindStringExact(actionName);
 
-            // Set "happening at" value
-            this.happeningAtValueToolStripStatusLabel.Text = this.actionRunDateTime.ToString();
+            // Update the happening at label
+            this.UpdateHappeningAtLabel();
 
             // Set the timer label
             this.SetTimerLabel();
@@ -202,6 +202,15 @@ namespace ShutdownB
 
             // Bring us to the fore
             this.WindowState = FormWindowState.Normal;
+        }
+
+        /// <summary>
+        /// Updates the happening at label.
+        /// </summary>
+        private void UpdateHappeningAtLabel()
+        {
+            // Update "happening at" value
+            this.happeningAtValueToolStripStatusLabel.Text = this.actionRunDateTime.ToString();
         }
 
         /// <summary>
@@ -520,7 +529,18 @@ namespace ShutdownB
         /// <param name="e">Event arguments.</param>
         private void OnSubtractButtonClick(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Subtract current values
+            this.actionRunDateTime = this.actionRunDateTime
+                .Subtract(TimeSpan.FromMinutes((int)this.hourNumericUpDown.Value))
+                .Subtract(TimeSpan.FromMinutes((int)this.minuteNumericUpDown.Value))
+                .Subtract(TimeSpan.FromMinutes((int)this.secondNumericUpDown.Value));
+
+
+            // Update the happening at label
+            this.UpdateHappeningAtLabel();
+
+            // Set the timer label
+            this.SetTimerLabel();
         }
 
         /// <summary>
@@ -531,7 +551,13 @@ namespace ShutdownB
         private void OnAddButtonClick(object sender, EventArgs e)
         {
             // Add current values
-            this.actionRunDateTime = this.actionRunDateTime.AddHours((int)this.hourNumericUpDown.Value).AddMinutes((int)this.minuteNumericUpDown.Value).AddSeconds((int)this.secondNumericUpDown.Value);
+            this.actionRunDateTime = this.actionRunDateTime
+            .AddHours((int)this.hourNumericUpDown.Value)
+            .AddMinutes((int)this.minuteNumericUpDown.Value)
+            .AddSeconds((int)this.secondNumericUpDown.Value);
+
+            // Update the happening at label
+            this.UpdateHappeningAtLabel();
 
             // Set the label immediately
             this.SetTimerLabel();
