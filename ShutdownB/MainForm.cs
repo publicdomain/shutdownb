@@ -181,6 +181,9 @@ namespace ShutdownB
         /// <param name="seconds">Seconds.</param>
         private void SetAction(string actionName, int hours, int minutes, int seconds)
         {
+            // Enable table layout panel
+            this.tableLayoutPanel1.Enabled = true;
+
             // Set the action name
             this.actionName = actionName;
 

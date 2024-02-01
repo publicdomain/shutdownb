@@ -75,6 +75,11 @@ namespace ShutdownB
         	this.secondNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
         	this.secondNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
         	this.secondNumericUpDown.Location = new System.Drawing.Point(181, 38);
+        	this.secondNumericUpDown.Maximum = new decimal(new int[] {
+        	        	        	59,
+        	        	        	0,
+        	        	        	0,
+        	        	        	0});
         	this.secondNumericUpDown.Name = "secondNumericUpDown";
         	this.secondNumericUpDown.Size = new System.Drawing.Size(75, 22);
         	this.secondNumericUpDown.TabIndex = 10;
@@ -110,6 +115,11 @@ namespace ShutdownB
         	this.hourNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
         	this.hourNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
         	this.hourNumericUpDown.Location = new System.Drawing.Point(3, 38);
+        	this.hourNumericUpDown.Maximum = new decimal(new int[] {
+        	        	        	23,
+        	        	        	0,
+        	        	        	0,
+        	        	        	0});
         	this.hourNumericUpDown.Name = "hourNumericUpDown";
         	this.hourNumericUpDown.Size = new System.Drawing.Size(73, 22);
         	this.hourNumericUpDown.TabIndex = 8;
