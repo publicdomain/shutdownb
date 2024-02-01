@@ -35,13 +35,21 @@ namespace ShutdownB
         /// <param name="e">Event arguments.</param>
         private void OnSetCustomTimeButtonClick(object sender, EventArgs e)
         {
+            // Set the timespan on passed main form
+            this.mainForm.CustomTimeSpan = new TimeSpan((int)this.hourNumericUpDown.Value, (int)this.minuteNumericUpDown.Value, (int)this.secondNumericUpDown.Value);
+
             // Close the form
             this.Close();
         }
 
-        void OnCustomTimeSpanFormFormClosing(object sender, FormClosingEventArgs e)
+        /// <summary>
+        /// Handles the custom time span form form closing.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
+        private void OnCustomTimeSpanFormFormClosing(object sender, FormClosingEventArgs e)
         {
-
+            // TODO Add code if needed
         }
     }
 }

@@ -75,6 +75,12 @@ namespace ShutdownB
         private DateTime actionRunDateTime;
 
         /// <summary>
+        /// Gets or sets the custom time span.
+        /// </summary>
+        /// <value>The custom time span.</value>
+        public TimeSpan CustomTimeSpan { get; set; }
+
+        /// <summary>
         /// The name of the action.
         /// </summary>
         private string actionName;
