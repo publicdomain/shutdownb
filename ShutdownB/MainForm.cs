@@ -116,14 +116,23 @@ namespace ShutdownB
         /// <param name="e">Elapsed event arguments.</param>
         private void OnTimedEvent(Object source, System.Timers.ElapsedEventArgs e)
         {
-            // Advise: action + time left to run it
-            this.timerLabel.Text = $"{this.actionName} {(this.actionRunDateTime - DateTime.Now).ToString(@"hh\:mm\:ss")}";
+            // Set the timer label
+            this.SetTimerLabel();
 
             // Check if it's time to run
             // 
             // Disable the action timer
             // this.actionTimer.Enabled = true;
             // Exit the form
+        }
+
+        /// <summary>
+        /// Sets the timer label.
+        /// </summary>
+        private void SetTimerLabel()
+        {
+            // Advise: action + time left to run it
+            this.timerLabel.Text = $"{this.actionName} {(this.actionRunDateTime - DateTime.Now).ToString(@"hh\:mm\:ss")}";
         }
 
         /// <summary>
@@ -147,6 +156,9 @@ namespace ShutdownB
 
             // Set "happening at" value
             this.happeningAtValueToolStripStatusLabel.Text = this.actionRunDateTime.ToString();
+
+            // Set the timer label
+            this.SetTimerLabel();
 
             // Start the action timer
             this.actionTimer.Enabled = true;
