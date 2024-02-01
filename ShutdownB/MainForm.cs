@@ -75,12 +75,6 @@ namespace ShutdownB
         private DateTime actionRunDateTime;
 
         /// <summary>
-        /// Gets or sets the custom time span.
-        /// </summary>
-        /// <value>The custom time span.</value>
-        public TimeSpan CustomTimeSpan { get; set; }
-
-        /// <summary>
         /// The name of the action.
         /// </summary>
         private string actionName;
@@ -418,6 +412,23 @@ namespace ShutdownB
 
                 // Custom
                 default:
+                    // Open the custom time dialog
+                    using (var customTimeSpanForm = new CustomTimeSpanForm())
+                    {
+                        // Show the dialog and check result
+                        if (customTimeSpanForm.ShowDialog() != DialogResult.OK)
+                        {
+                            // Halt program's flow
+                            this.Close();
+                            return;
+                        }
+
+                        // Set
+                        hours = customTimeSpanForm.CustomTimeSpan.Hours;
+                        minutes = customTimeSpanForm.CustomTimeSpan.Minutes;
+                        seconds = customTimeSpanForm.CustomTimeSpan.Seconds;
+                    }
+
                     break;
             }
 

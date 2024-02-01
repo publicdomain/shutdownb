@@ -11,19 +11,16 @@ namespace ShutdownB
     public partial class CustomTimeSpanForm : Form
     {
         /// <summary>
-        /// The main form.
+        /// Gets or sets the custom time span.
         /// </summary>
-        private MainForm mainForm;
+        /// <value>The custom time span.</value>
+        public TimeSpan CustomTimeSpan { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:ShutdownB.CustomTimeSpanForm"/> class.
         /// </summary>
-        /// <param name="mainForm">Main form.</param>
-        public CustomTimeSpanForm(MainForm mainForm)
+        public CustomTimeSpanForm()
         {
-            // Set the main form
-            this.mainForm = mainForm;
-
             // The InitializeComponent() call is required for Windows Forms designer support.
             this.InitializeComponent();
         }
@@ -36,10 +33,28 @@ namespace ShutdownB
         private void OnSetCustomTimeButtonClick(object sender, EventArgs e)
         {
             // Set the timespan on passed main form
-            this.mainForm.CustomTimeSpan = new TimeSpan((int)this.hourNumericUpDown.Value, (int)this.minuteNumericUpDown.Value, (int)this.secondNumericUpDown.Value);
+            this.CustomTimeSpan = new TimeSpan((int)this.hourNumericUpDown.Value, (int)this.minuteNumericUpDown.Value, (int)this.secondNumericUpDown.Value);
+
+            // Set dialog result
+            this.DialogResult = DialogResult.OK;
 
             // Close the form
             this.Close();
+        }
+
+        /// <summary>
+        /// Processes the dialog key.
+        /// </summary>
+        /// <returns><c>true</c>, if dialog key was processed, <c>false</c> otherwise.</returns>
+        /// <param name="keyData">Key data.</param>
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            if (Form.ModifierKeys == Keys.None && keyData == Keys.Escape)
+            {
+                this.Close();
+                return true;
+            }
+            return base.ProcessDialogKey(keyData);
         }
 
         /// <summary>
