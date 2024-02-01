@@ -60,6 +60,26 @@ namespace ShutdownB
         public static extern bool ExitWindowsEx(uint uFlags, uint dwReason);
 
         /// <summary>
+        /// The action timer.
+        /// </summary>
+        private System.Timers.Timer actionTimer;
+
+        /// <summary>
+        /// The action start date time.
+        /// </summary>
+        private DateTime actionSetDateTime;
+
+        /// <summary>
+        /// The actio run date time.
+        /// </summary>
+        private DateTime actionRunDateTime;
+
+        /// <summary>
+        /// The name of the action.
+        /// </summary>
+        private string actionName;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="T:ShutdownB.MainForm"/> class.
         /// </summary>
         public MainForm()
@@ -73,11 +93,67 @@ namespace ShutdownB
 
             // Set associated icon from exe file
             this.associatedIcon = Icon.ExtractAssociatedIcon(typeof(MainForm).GetTypeInfo().Assembly.Location);
+
+            /* Set timer */
+
+            // Create a timer and set a two second interval.
+            this.actionTimer = new System.Timers.Timer
+            {
+                Interval = 1000 // One second
+            };
+
+            // Hook the event up
+            this.actionTimer.Elapsed += OnTimedEvent;
+
+            // Explicitly fire repeated events
+            this.actionTimer.AutoReset = true;
         }
 
+        /// <summary>
+        /// Handles the timed event.
+        /// </summary>
+        /// <param name="source">Source.</param>
+        /// <param name="e">Elapsed event arguments.</param>
+        private void OnTimedEvent(Object source, System.Timers.ElapsedEventArgs e)
+        {
+            // Advise: action + time left to run it
+            this.timerLabel.Text = $"{this.actionName} {(this.actionRunDateTime - DateTime.Now).ToString(@"hh\:mm\:ss")}";
+
+            // Check if it's time to run
+            // 
+            // Disable the action timer
+            // this.actionTimer.Enabled = true;
+            // Exit the form
+        }
+
+        /// <summary>
+        /// Sets the action.
+        /// </summary>
+        /// <param name="actionName">Action name.</param>
+        /// <param name="hours">Hours.</param>
+        /// <param name="minutes">Minutes.</param>
+        /// <param name="seconds">Seconds.</param>
+        private void SetAction(string actionName, int hours, int minutes, int seconds)
+        {
+            // Set the action name
+            this.actionName = actionName;
+
+            // Set DateTime objects
+            this.actionSetDateTime = DateTime.Now;
+            this.actionRunDateTime = this.actionSetDateTime.AddHours(hours).AddMinutes(minutes).AddSeconds(seconds);
+
+            // Start the action timer
+            this.actionTimer.Enabled = true;
+        }
+
+        /// <summary>
+        /// Handles the context menu strip opening.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
         private void OnContextMenuStripOpening(object sender, System.ComponentModel.CancelEventArgs e)
         {
-
+            // TODO Add code if needed
         }
 
         /// <summary>
@@ -97,14 +173,24 @@ namespace ShutdownB
             this.mainContextMenuStrip.Show(cursorPoint.X, cursorPoint.Y);
         }
 
+        /// <summary>
+        /// Handles the main form shown.
+        /// </summary>
+        /// <param name="sender">Sender.</param>
+        /// <param name="e">E.</param>
         private void OnMainFormShown(object sender, EventArgs e)
         {
-
+            // TODO Add code if needed
         }
 
+        /// <summary>
+        /// Handles the main form form closing.
+        /// </summary>
+        /// <param name="sender">Sender.</param>
+        /// <param name="e">E.</param>
         private void OnMainFormFormClosing(object sender, FormClosingEventArgs e)
         {
-
+            // TODO Add code if needed
         }
 
         /// <summary>
@@ -176,8 +262,51 @@ namespace ShutdownB
         /// <param name="e">Event arguments.</param>
         private void OnLockToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // Issue lock command
-            this.LockNow();
+            // Set time integers
+            int hours = 0, minutes = 0, seconds = 0;
+
+            // Switch by sender name
+            switch (((ToolStripMenuItem)sender).Name)
+            {
+                // Main menu action
+                case "lockToolStripMenuItem":
+                    this.LockNow();
+
+                    break;
+
+                // 10 minutes
+                case "lock10MinutesToolStripMenuItem":
+                    minutes = 10;
+
+                    break;
+
+                // 30 minutes
+                case "lock30MinutesToolStripMenuItem":
+                    minutes = 30;
+
+                    break;
+
+                // 1 hour
+                case "lock1HourToolStripMenuItem":
+                    hours = 1;
+
+                    break;
+
+                // 2 hours
+                case "lock2HoursToolStripMenuItem":
+                    hours = 2;
+
+                    break;
+
+                // Custom time
+                case "lockCustomTimeToolStripMenuItem":
+
+
+                    break;
+            }
+
+            //#
+            this.SetAction("Lock", hours, minutes, seconds);
         }
 
         /// <summary>
