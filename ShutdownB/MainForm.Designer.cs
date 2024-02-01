@@ -757,7 +757,7 @@ namespace ShutdownB
         	this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
         	this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
         	this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-        	this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+        	this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 38F));
         	this.tableLayoutPanel2.Controls.Add(this.minuteSecondSeparatorLabel, 4, 0);
         	this.tableLayoutPanel2.Controls.Add(this.subtractButton, 0, 0);
         	this.tableLayoutPanel2.Controls.Add(this.addButton, 6, 0);
@@ -779,7 +779,7 @@ namespace ShutdownB
         	this.minuteSecondSeparatorLabel.Dock = System.Windows.Forms.DockStyle.Fill;
         	this.minuteSecondSeparatorLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
         	this.minuteSecondSeparatorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        	this.minuteSecondSeparatorLabel.Location = new System.Drawing.Point(159, 0);
+        	this.minuteSecondSeparatorLabel.Location = new System.Drawing.Point(158, 0);
         	this.minuteSecondSeparatorLabel.Margin = new System.Windows.Forms.Padding(0);
         	this.minuteSecondSeparatorLabel.Name = "minuteSecondSeparatorLabel";
         	this.minuteSecondSeparatorLabel.Size = new System.Drawing.Size(10, 35);
@@ -803,9 +803,9 @@ namespace ShutdownB
         	// 
         	this.addButton.Dock = System.Windows.Forms.DockStyle.Fill;
         	this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        	this.addButton.Location = new System.Drawing.Point(232, 3);
+        	this.addButton.Location = new System.Drawing.Point(230, 3);
         	this.addButton.Name = "addButton";
-        	this.addButton.Size = new System.Drawing.Size(32, 29);
+        	this.addButton.Size = new System.Drawing.Size(34, 29);
         	this.addButton.TabIndex = 1;
         	this.addButton.Text = ">";
         	this.addButton.UseVisualStyleBackColor = true;
@@ -837,7 +837,7 @@ namespace ShutdownB
         	        	        	0,
         	        	        	0});
         	this.minuteNumericUpDown.Name = "minuteNumericUpDown";
-        	this.minuteNumericUpDown.Size = new System.Drawing.Size(54, 22);
+        	this.minuteNumericUpDown.Size = new System.Drawing.Size(53, 22);
         	this.minuteNumericUpDown.TabIndex = 3;
         	this.minuteNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
         	this.minuteNumericUpDown.Value = new decimal(new int[] {
@@ -850,9 +850,9 @@ namespace ShutdownB
         	// 
         	this.secondNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
         	this.secondNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        	this.secondNumericUpDown.Location = new System.Drawing.Point(172, 3);
+        	this.secondNumericUpDown.Location = new System.Drawing.Point(171, 3);
         	this.secondNumericUpDown.Name = "secondNumericUpDown";
-        	this.secondNumericUpDown.Size = new System.Drawing.Size(54, 22);
+        	this.secondNumericUpDown.Size = new System.Drawing.Size(53, 22);
         	this.secondNumericUpDown.TabIndex = 4;
         	this.secondNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
         	// 

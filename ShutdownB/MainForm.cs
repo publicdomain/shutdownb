@@ -120,10 +120,47 @@ namespace ShutdownB
             this.SetTimerLabel();
 
             // Check if it's time to run
-            // 
-            // Disable the action timer
-            // this.actionTimer.Enabled = true;
-            // Exit the form
+            if (DateTime.Now >= this.actionRunDateTime)
+            {
+                // Disable the action timer
+                this.actionTimer.Enabled = false;
+
+                // Run the action
+                switch (this.actionComboBox.Text)
+                {
+                    case "Shut down":
+                        this.ShutdownNow();
+
+                        break;
+
+                    case "Hibernate":
+                        this.HibernateNow();
+
+                        break;
+
+                    case "Lock":
+                        this.LockNow();
+
+                        break;
+                    case "Log off":
+                        this.LogoffNow();
+
+                        break;
+
+                    case "Sleep":
+                        this.SleepNow();
+
+                        break;
+
+                    case "Restart":
+                        this.RestartNow();
+
+                        break;
+                }
+
+                // Exit the program
+                this.Close();
+            }
         }
 
         /// <summary>
@@ -459,19 +496,34 @@ namespace ShutdownB
             this.Close();
         }
 
+        /// <summary>
+        /// Handles the subtract button click.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
         private void OnSubtractButtonClick(object sender, EventArgs e)
         {
-
+            // TODO Add code
         }
 
+        /// <summary>
+        /// Handles the add button click.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
         private void OnAddButtonClick(object sender, EventArgs e)
         {
-
+            // TODO Add code
         }
 
+        /// <summary>
+        /// Handles the action combo box selected index changed.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
         private void OnActionComboBoxSelectedIndexChanged(object sender, EventArgs e)
         {
-
+            // TODO Add code
         }
 
         /// <summary>
