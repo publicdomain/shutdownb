@@ -499,7 +499,7 @@ namespace ShutdownB
             var aboutForm = new AboutForm(
                 $"About {programTitle}",
                 $"{programTitle} {version.Major}.{version.Minor}.{version.Build}",
-                $"Made for: luvnbeast{Environment.NewLine}DonationCoder.com{Environment.NewLine}Day #031, Week #05 @ January 31, 2024",
+                $"Made for: luvnbeast{Environment.NewLine}DonationCoder.com{Environment.NewLine}Day #032, Week #05 @ February 01, 2024",
                 licenseText,
                 this.Icon.ToBitmap())
             {
