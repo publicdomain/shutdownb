@@ -530,7 +530,11 @@ namespace ShutdownB
         /// <param name="e">Event arguments.</param>
         private void OnAddButtonClick(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Add current values
+            this.actionRunDateTime = this.actionRunDateTime.AddHours((int)this.hourNumericUpDown.Value).AddMinutes((int)this.minuteNumericUpDown.Value).AddSeconds((int)this.secondNumericUpDown.Value);
+
+            // Set the label immediately
+            this.SetTimerLabel();
         }
 
         /// <summary>
