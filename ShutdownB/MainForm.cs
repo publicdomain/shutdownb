@@ -142,8 +142,17 @@ namespace ShutdownB
             this.actionSetDateTime = DateTime.Now;
             this.actionRunDateTime = this.actionSetDateTime.AddHours(hours).AddMinutes(minutes).AddSeconds(seconds);
 
+            // Set action combo box to matching item
+            this.actionComboBox.SelectedIndex = this.actionComboBox.FindStringExact(actionName);
+
+            // Set "happening at" value
+            this.happeningAtValueToolStripStatusLabel.Text = this.actionRunDateTime.ToString();
+
             // Start the action timer
             this.actionTimer.Enabled = true;
+
+            // Bring us to the fore
+            this.WindowState = FormWindowState.Normal;
         }
 
         /// <summary>
@@ -262,51 +271,8 @@ namespace ShutdownB
         /// <param name="e">Event arguments.</param>
         private void OnLockToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // Set time integers
-            int hours = 0, minutes = 0, seconds = 0;
-
-            // Switch by sender name
-            switch (((ToolStripMenuItem)sender).Name)
-            {
-                // Main menu action
-                case "lockToolStripMenuItem":
-                    this.LockNow();
-
-                    break;
-
-                // 10 minutes
-                case "lock10MinutesToolStripMenuItem":
-                    minutes = 10;
-
-                    break;
-
-                // 30 minutes
-                case "lock30MinutesToolStripMenuItem":
-                    minutes = 30;
-
-                    break;
-
-                // 1 hour
-                case "lock1HourToolStripMenuItem":
-                    hours = 1;
-
-                    break;
-
-                // 2 hours
-                case "lock2HoursToolStripMenuItem":
-                    hours = 2;
-
-                    break;
-
-                // Custom time
-                case "lockCustomTimeToolStripMenuItem":
-
-
-                    break;
-            }
-
-            //#
-            this.SetAction("Lock", hours, minutes, seconds);
+            // Issue lock
+            this.LockNow();
         }
 
         /// <summary>
@@ -359,9 +325,49 @@ namespace ShutdownB
             process.Start();
         }
 
+        /// <summary>
+        /// Handles the timer tool strip menu item drop down item clicked.
+        /// </summary>
+        /// <param name="sender">Sender.</param>
+        /// <param name="e">E.</param>
         private void OnTimerToolStripMenuItemDropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
+            // Set the time 
+            string[] senderTime = ((ToolStripMenuItem)sender).Text.Replace("&", string.Empty).Split(new char[] { ' ' });
 
+            // Set the action
+            string actionName = e.ClickedItem.Text.Replace("&", string.Empty);
+
+            // Set the time integers
+            int hours = 0, minutes = 0, seconds = 0;
+
+            // Switch sender time's hours/minutes
+            switch (senderTime[1])
+            {
+                // Hour(s)
+                case "hour":
+                case "hours":
+
+                    // Set
+                    hours = int.Parse(senderTime[0]);
+
+                    break;
+
+                // Minutes
+                case "minutes":
+
+                    // Set
+                    minutes = int.Parse(senderTime[0]);
+
+                    break;
+
+                // Custom
+                default:
+                    break;
+            }
+
+            // Set the action
+            this.SetAction(actionName, hours, minutes, seconds);
         }
 
         private void OnAlarmToolStripMenuItemDropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)

@@ -45,14 +45,14 @@ namespace ShutdownB
         	this.minutesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.shutDownToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
         	this.hibernateToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-        	this.lockToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+        	this.lock10MinutesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.logOffToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
         	this.sleepToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
         	this.restartToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
         	this.minutesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
         	this.shutDownToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
         	this.hibernateToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-        	this.lockToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+        	this.lock30MinutesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.logOffToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
         	this.sleepToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
         	this.restartToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,14 +60,14 @@ namespace ShutdownB
         	this.hourToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.shutDownToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
         	this.hibernateToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-        	this.lockToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+        	this.lock1HourToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.logOffToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
         	this.sleepToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
         	this.restartToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
         	this.hoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.shutDownToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
         	this.hibernateToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-        	this.lockToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+        	this.lock2HoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.logOffToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
         	this.sleepToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
         	this.restartToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,7 +75,7 @@ namespace ShutdownB
         	this.customTimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.shutDownToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
         	this.hibernateToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
-        	this.lockToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+        	this.lockCustomTimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.logOffToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
         	this.sleepToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
         	this.restartToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
@@ -107,20 +107,20 @@ namespace ShutdownB
         	this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
         	this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.statusStrip = new System.Windows.Forms.StatusStrip();
-        	this.happeningAtToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-        	this.dateTimeToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+        	this.happeningAtTextToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+        	this.happeningAtValueToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
         	this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
         	this.timerLabel = new System.Windows.Forms.Label();
         	this.actionComboBox = new System.Windows.Forms.ComboBox();
         	this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+        	this.minuteSecondSeparatorLabel = new System.Windows.Forms.Label();
         	this.subtractButton = new System.Windows.Forms.Button();
         	this.addButton = new System.Windows.Forms.Button();
         	this.hourNumericUpDown = new System.Windows.Forms.NumericUpDown();
         	this.minuteNumericUpDown = new System.Windows.Forms.NumericUpDown();
         	this.secondNumericUpDown = new System.Windows.Forms.NumericUpDown();
-        	this.cancelButton = new System.Windows.Forms.Button();
         	this.hourMinuteSeparatorLabel = new System.Windows.Forms.Label();
-        	this.minuteSecondSeparatorLabel = new System.Windows.Forms.Label();
+        	this.cancelButton = new System.Windows.Forms.Button();
         	this.mainContextMenuStrip.SuspendLayout();
         	this.menuStrip.SuspendLayout();
         	this.statusStrip.SuspendLayout();
@@ -215,7 +215,7 @@ namespace ShutdownB
         	this.minutesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
         	        	        	this.shutDownToolStripMenuItem1,
         	        	        	this.hibernateToolStripMenuItem1,
-        	        	        	this.lockToolStripMenuItem1,
+        	        	        	this.lock10MinutesToolStripMenuItem,
         	        	        	this.logOffToolStripMenuItem1,
         	        	        	this.sleepToolStripMenuItem1,
         	        	        	this.restartToolStripMenuItem1});
@@ -237,11 +237,11 @@ namespace ShutdownB
         	this.hibernateToolStripMenuItem1.Text = "&Hibernate";
         	this.hibernateToolStripMenuItem1.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.OnTimerToolStripMenuItemDropDownItemClicked);
         	// 
-        	// lockToolStripMenuItem1
+        	// lock10MinutesToolStripMenuItem
         	// 
-        	this.lockToolStripMenuItem1.Name = "lockToolStripMenuItem1";
-        	this.lockToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
-        	this.lockToolStripMenuItem1.Text = "L&ock";
+        	this.lock10MinutesToolStripMenuItem.Name = "lock10MinutesToolStripMenuItem";
+        	this.lock10MinutesToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+        	this.lock10MinutesToolStripMenuItem.Text = "L&ock";
         	// 
         	// logOffToolStripMenuItem1
         	// 
@@ -266,7 +266,7 @@ namespace ShutdownB
         	this.minutesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
         	        	        	this.shutDownToolStripMenuItem2,
         	        	        	this.hibernateToolStripMenuItem2,
-        	        	        	this.lockToolStripMenuItem2,
+        	        	        	this.lock30MinutesToolStripMenuItem,
         	        	        	this.logOffToolStripMenuItem2,
         	        	        	this.sleepToolStripMenuItem2,
         	        	        	this.restartToolStripMenuItem2});
@@ -287,11 +287,11 @@ namespace ShutdownB
         	this.hibernateToolStripMenuItem2.Size = new System.Drawing.Size(131, 22);
         	this.hibernateToolStripMenuItem2.Text = "&Hibernate";
         	// 
-        	// lockToolStripMenuItem2
+        	// lock30MinutesToolStripMenuItem
         	// 
-        	this.lockToolStripMenuItem2.Name = "lockToolStripMenuItem2";
-        	this.lockToolStripMenuItem2.Size = new System.Drawing.Size(131, 22);
-        	this.lockToolStripMenuItem2.Text = "L&ock";
+        	this.lock30MinutesToolStripMenuItem.Name = "lock30MinutesToolStripMenuItem";
+        	this.lock30MinutesToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+        	this.lock30MinutesToolStripMenuItem.Text = "L&ock";
         	// 
         	// logOffToolStripMenuItem2
         	// 
@@ -321,7 +321,7 @@ namespace ShutdownB
         	this.hourToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
         	        	        	this.shutDownToolStripMenuItem3,
         	        	        	this.hibernateToolStripMenuItem3,
-        	        	        	this.lockToolStripMenuItem3,
+        	        	        	this.lock1HourToolStripMenuItem,
         	        	        	this.logOffToolStripMenuItem3,
         	        	        	this.sleepToolStripMenuItem3,
         	        	        	this.restartToolStripMenuItem3});
@@ -342,11 +342,11 @@ namespace ShutdownB
         	this.hibernateToolStripMenuItem3.Size = new System.Drawing.Size(131, 22);
         	this.hibernateToolStripMenuItem3.Text = "&Hibernate";
         	// 
-        	// lockToolStripMenuItem3
+        	// lock1HourToolStripMenuItem
         	// 
-        	this.lockToolStripMenuItem3.Name = "lockToolStripMenuItem3";
-        	this.lockToolStripMenuItem3.Size = new System.Drawing.Size(131, 22);
-        	this.lockToolStripMenuItem3.Text = "L&ock";
+        	this.lock1HourToolStripMenuItem.Name = "lock1HourToolStripMenuItem";
+        	this.lock1HourToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+        	this.lock1HourToolStripMenuItem.Text = "L&ock";
         	// 
         	// logOffToolStripMenuItem3
         	// 
@@ -371,7 +371,7 @@ namespace ShutdownB
         	this.hoursToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
         	        	        	this.shutDownToolStripMenuItem4,
         	        	        	this.hibernateToolStripMenuItem4,
-        	        	        	this.lockToolStripMenuItem4,
+        	        	        	this.lock2HoursToolStripMenuItem,
         	        	        	this.logOffToolStripMenuItem4,
         	        	        	this.sleepToolStripMenuItem4,
         	        	        	this.restartToolStripMenuItem4});
@@ -392,11 +392,11 @@ namespace ShutdownB
         	this.hibernateToolStripMenuItem4.Size = new System.Drawing.Size(131, 22);
         	this.hibernateToolStripMenuItem4.Text = "&Hibernate";
         	// 
-        	// lockToolStripMenuItem4
+        	// lock2HoursToolStripMenuItem
         	// 
-        	this.lockToolStripMenuItem4.Name = "lockToolStripMenuItem4";
-        	this.lockToolStripMenuItem4.Size = new System.Drawing.Size(131, 22);
-        	this.lockToolStripMenuItem4.Text = "L&ock";
+        	this.lock2HoursToolStripMenuItem.Name = "lock2HoursToolStripMenuItem";
+        	this.lock2HoursToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+        	this.lock2HoursToolStripMenuItem.Text = "L&ock";
         	// 
         	// logOffToolStripMenuItem4
         	// 
@@ -426,7 +426,7 @@ namespace ShutdownB
         	this.customTimeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
         	        	        	this.shutDownToolStripMenuItem5,
         	        	        	this.hibernateToolStripMenuItem5,
-        	        	        	this.lockToolStripMenuItem5,
+        	        	        	this.lockCustomTimeToolStripMenuItem,
         	        	        	this.logOffToolStripMenuItem5,
         	        	        	this.sleepToolStripMenuItem5,
         	        	        	this.restartToolStripMenuItem5});
@@ -447,11 +447,11 @@ namespace ShutdownB
         	this.hibernateToolStripMenuItem5.Size = new System.Drawing.Size(131, 22);
         	this.hibernateToolStripMenuItem5.Text = "&Hibernate";
         	// 
-        	// lockToolStripMenuItem5
+        	// lockCustomTimeToolStripMenuItem
         	// 
-        	this.lockToolStripMenuItem5.Name = "lockToolStripMenuItem5";
-        	this.lockToolStripMenuItem5.Size = new System.Drawing.Size(131, 22);
-        	this.lockToolStripMenuItem5.Text = "L&ock";
+        	this.lockCustomTimeToolStripMenuItem.Name = "lockCustomTimeToolStripMenuItem";
+        	this.lockCustomTimeToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+        	this.lockCustomTimeToolStripMenuItem.Text = "L&ock";
         	// 
         	// logOffToolStripMenuItem5
         	// 
@@ -677,26 +677,26 @@ namespace ShutdownB
         	// statusStrip
         	// 
         	this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-        	        	        	this.happeningAtToolStripStatusLabel,
-        	        	        	this.dateTimeToolStripStatusLabel});
+        	        	        	this.happeningAtTextToolStripStatusLabel,
+        	        	        	this.happeningAtValueToolStripStatusLabel});
         	this.statusStrip.Location = new System.Drawing.Point(0, 148);
         	this.statusStrip.Name = "statusStrip";
         	this.statusStrip.Size = new System.Drawing.Size(387, 22);
         	this.statusStrip.TabIndex = 2;
         	this.statusStrip.Text = "statusStrip1";
         	// 
-        	// happeningAtToolStripStatusLabel
+        	// happeningAtTextToolStripStatusLabel
         	// 
-        	this.happeningAtToolStripStatusLabel.Name = "happeningAtToolStripStatusLabel";
-        	this.happeningAtToolStripStatusLabel.Size = new System.Drawing.Size(82, 17);
-        	this.happeningAtToolStripStatusLabel.Text = "Happening at:";
+        	this.happeningAtTextToolStripStatusLabel.Name = "happeningAtTextToolStripStatusLabel";
+        	this.happeningAtTextToolStripStatusLabel.Size = new System.Drawing.Size(82, 17);
+        	this.happeningAtTextToolStripStatusLabel.Text = "Happening at:";
         	// 
-        	// dateTimeToolStripStatusLabel
+        	// happeningAtValueToolStripStatusLabel
         	// 
-        	this.dateTimeToolStripStatusLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        	this.dateTimeToolStripStatusLabel.Name = "dateTimeToolStripStatusLabel";
-        	this.dateTimeToolStripStatusLabel.Size = new System.Drawing.Size(62, 17);
-        	this.dateTimeToolStripStatusLabel.Text = "DateTime";
+        	this.happeningAtValueToolStripStatusLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        	this.happeningAtValueToolStripStatusLabel.Name = "happeningAtValueToolStripStatusLabel";
+        	this.happeningAtValueToolStripStatusLabel.Size = new System.Drawing.Size(62, 17);
+        	this.happeningAtValueToolStripStatusLabel.Text = "DateTime";
         	// 
         	// tableLayoutPanel1
         	// 
@@ -757,7 +757,7 @@ namespace ShutdownB
         	this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
         	this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
         	this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-        	this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+        	this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
         	this.tableLayoutPanel2.Controls.Add(this.minuteSecondSeparatorLabel, 4, 0);
         	this.tableLayoutPanel2.Controls.Add(this.subtractButton, 0, 0);
         	this.tableLayoutPanel2.Controls.Add(this.addButton, 6, 0);
@@ -773,6 +773,19 @@ namespace ShutdownB
         	this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
         	this.tableLayoutPanel2.Size = new System.Drawing.Size(267, 35);
         	this.tableLayoutPanel2.TabIndex = 3;
+        	// 
+        	// minuteSecondSeparatorLabel
+        	// 
+        	this.minuteSecondSeparatorLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+        	this.minuteSecondSeparatorLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
+        	this.minuteSecondSeparatorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        	this.minuteSecondSeparatorLabel.Location = new System.Drawing.Point(159, 0);
+        	this.minuteSecondSeparatorLabel.Margin = new System.Windows.Forms.Padding(0);
+        	this.minuteSecondSeparatorLabel.Name = "minuteSecondSeparatorLabel";
+        	this.minuteSecondSeparatorLabel.Size = new System.Drawing.Size(10, 35);
+        	this.minuteSecondSeparatorLabel.TabIndex = 6;
+        	this.minuteSecondSeparatorLabel.Text = ":";
+        	this.minuteSecondSeparatorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
         	// 
         	// subtractButton
         	// 
@@ -790,9 +803,9 @@ namespace ShutdownB
         	// 
         	this.addButton.Dock = System.Windows.Forms.DockStyle.Fill;
         	this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        	this.addButton.Location = new System.Drawing.Point(235, 3);
+        	this.addButton.Location = new System.Drawing.Point(232, 3);
         	this.addButton.Name = "addButton";
-        	this.addButton.Size = new System.Drawing.Size(29, 29);
+        	this.addButton.Size = new System.Drawing.Size(32, 29);
         	this.addButton.TabIndex = 1;
         	this.addButton.Text = ">";
         	this.addButton.UseVisualStyleBackColor = true;
@@ -804,7 +817,7 @@ namespace ShutdownB
         	this.hourNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
         	this.hourNumericUpDown.Location = new System.Drawing.Point(33, 3);
         	this.hourNumericUpDown.Name = "hourNumericUpDown";
-        	this.hourNumericUpDown.Size = new System.Drawing.Size(54, 22);
+        	this.hourNumericUpDown.Size = new System.Drawing.Size(53, 22);
         	this.hourNumericUpDown.TabIndex = 2;
         	this.hourNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
         	// 
@@ -812,7 +825,7 @@ namespace ShutdownB
         	// 
         	this.minuteNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
         	this.minuteNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        	this.minuteNumericUpDown.Location = new System.Drawing.Point(103, 3);
+        	this.minuteNumericUpDown.Location = new System.Drawing.Point(102, 3);
         	this.minuteNumericUpDown.Maximum = new decimal(new int[] {
         	        	        	59,
         	        	        	0,
@@ -824,7 +837,7 @@ namespace ShutdownB
         	        	        	0,
         	        	        	0});
         	this.minuteNumericUpDown.Name = "minuteNumericUpDown";
-        	this.minuteNumericUpDown.Size = new System.Drawing.Size(55, 22);
+        	this.minuteNumericUpDown.Size = new System.Drawing.Size(54, 22);
         	this.minuteNumericUpDown.TabIndex = 3;
         	this.minuteNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
         	this.minuteNumericUpDown.Value = new decimal(new int[] {
@@ -837,11 +850,24 @@ namespace ShutdownB
         	// 
         	this.secondNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
         	this.secondNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        	this.secondNumericUpDown.Location = new System.Drawing.Point(174, 3);
+        	this.secondNumericUpDown.Location = new System.Drawing.Point(172, 3);
         	this.secondNumericUpDown.Name = "secondNumericUpDown";
-        	this.secondNumericUpDown.Size = new System.Drawing.Size(55, 22);
+        	this.secondNumericUpDown.Size = new System.Drawing.Size(54, 22);
         	this.secondNumericUpDown.TabIndex = 4;
         	this.secondNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+        	// 
+        	// hourMinuteSeparatorLabel
+        	// 
+        	this.hourMinuteSeparatorLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+        	this.hourMinuteSeparatorLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
+        	this.hourMinuteSeparatorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        	this.hourMinuteSeparatorLabel.Location = new System.Drawing.Point(89, 0);
+        	this.hourMinuteSeparatorLabel.Margin = new System.Windows.Forms.Padding(0);
+        	this.hourMinuteSeparatorLabel.Name = "hourMinuteSeparatorLabel";
+        	this.hourMinuteSeparatorLabel.Size = new System.Drawing.Size(10, 35);
+        	this.hourMinuteSeparatorLabel.TabIndex = 5;
+        	this.hourMinuteSeparatorLabel.Text = ":";
+        	this.hourMinuteSeparatorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
         	// 
         	// cancelButton
         	// 
@@ -856,32 +882,6 @@ namespace ShutdownB
         	this.cancelButton.Text = "&Cancel action now (Esc)";
         	this.cancelButton.UseVisualStyleBackColor = true;
         	this.cancelButton.Click += new System.EventHandler(this.OnCancelButtonClick);
-        	// 
-        	// hourMinuteSeparatorLabel
-        	// 
-        	this.hourMinuteSeparatorLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.hourMinuteSeparatorLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
-        	this.hourMinuteSeparatorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        	this.hourMinuteSeparatorLabel.Location = new System.Drawing.Point(90, 0);
-        	this.hourMinuteSeparatorLabel.Margin = new System.Windows.Forms.Padding(0);
-        	this.hourMinuteSeparatorLabel.Name = "hourMinuteSeparatorLabel";
-        	this.hourMinuteSeparatorLabel.Size = new System.Drawing.Size(10, 35);
-        	this.hourMinuteSeparatorLabel.TabIndex = 5;
-        	this.hourMinuteSeparatorLabel.Text = ":";
-        	this.hourMinuteSeparatorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-        	// 
-        	// minuteSecondSeparatorLabel
-        	// 
-        	this.minuteSecondSeparatorLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.minuteSecondSeparatorLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
-        	this.minuteSecondSeparatorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        	this.minuteSecondSeparatorLabel.Location = new System.Drawing.Point(161, 0);
-        	this.minuteSecondSeparatorLabel.Margin = new System.Windows.Forms.Padding(0);
-        	this.minuteSecondSeparatorLabel.Name = "minuteSecondSeparatorLabel";
-        	this.minuteSecondSeparatorLabel.Size = new System.Drawing.Size(10, 35);
-        	this.minuteSecondSeparatorLabel.TabIndex = 6;
-        	this.minuteSecondSeparatorLabel.Text = ":";
-        	this.minuteSecondSeparatorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
         	// 
         	// MainForm
         	// 
@@ -924,10 +924,10 @@ namespace ShutdownB
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.ComboBox actionComboBox;
         private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.ToolStripStatusLabel dateTimeToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel happeningAtValueToolStripStatusLabel;
         private System.Windows.Forms.Label timerLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.ToolStripStatusLabel happeningAtToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel happeningAtTextToolStripStatusLabel;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem sourceCodeGithubcomToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem originalThreadDonationCodercomToolStripMenuItem;
@@ -939,21 +939,21 @@ namespace ShutdownB
         private System.Windows.Forms.ToolStripMenuItem restartToolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem sleepToolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem logOffToolStripMenuItem5;
-        private System.Windows.Forms.ToolStripMenuItem lockToolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem lockCustomTimeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hibernateToolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem shutDownToolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem customTimeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem restartToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem sleepToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem logOffToolStripMenuItem4;
-        private System.Windows.Forms.ToolStripMenuItem lockToolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem lock2HoursToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hibernateToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem shutDownToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem hoursToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem restartToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem sleepToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem logOffToolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem lockToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem lock1HourToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hibernateToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem shutDownToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem hourToolStripMenuItem;
@@ -961,14 +961,14 @@ namespace ShutdownB
         private System.Windows.Forms.ToolStripMenuItem restartToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem sleepToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem logOffToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem lockToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem lock30MinutesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hibernateToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem shutDownToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem minutesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem restartToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem sleepToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem logOffToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem lockToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem lock10MinutesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hibernateToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem shutDownToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem minutesToolStripMenuItem;
