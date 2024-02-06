@@ -150,8 +150,55 @@ namespace ShutdownB
                 // Check for alarm by combobox's disabled status
                 if (this.actionComboBox.Enabled == false)
                 {
-                    // Run the command
-                    MessageBox.Show("Alarm command");
+                    // Check there's a command to run
+                    if (this.settingsData.ProcessFileName.Length > 0)
+                    {
+                        // Confirm the program file is present
+                        if (File.Exists(this.settingsData.ProcessFileName))
+                        {
+                            try
+                            {
+                                // Set alarm's process
+                                Process process = new Process();
+
+                                // Set file name
+                                process.StartInfo.FileName = this.settingsData.ProcessFileName;
+
+                                // Check for arguments
+                                if (this.settingsData.ProcessArguments.Length > 0)
+                                {
+                                    // Set the arguments
+                                    process.StartInfo.Arguments = this.settingsData.ProcessArguments;
+                                }
+
+                                // Check if it's hidden
+                                if (this.settingsData.ProcessIsHidden)
+                                {
+                                    // Set window style
+                                    process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                                }
+
+                                // Start the alarm process
+                                process.Start();
+                            }
+                            catch (Exception ex)
+                            {
+                                // Advise user
+                                MessageBox.Show(ex.Message, "Alarm", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            // Advise user
+                            MessageBox.Show("Alarm command file does not exist.", "Alarm", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+
+                    }
+                    else
+                    {
+                        // Advise user
+                        MessageBox.Show("Alarm command is not set.", "Alarm", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
                 }
                 else
                 {

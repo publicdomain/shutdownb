@@ -60,19 +60,27 @@ namespace PublicDomain
         /// Gets or sets the name of the process file.
         /// </summary>
         /// <value>The name of the process file.</value>
-        public string ProcessFileName { get; set; }
+        public string ProcessFileName { get; set; } = string.Empty;
 
         /// <summary>
         /// Gets or sets the process arguments.
         /// </summary>
         /// <value>The process arguments.</value>
-        public string ProcessArguments { get; set; }
+        public string ProcessArguments { get; set; } = string.Empty;
 
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="T:PublicDomain.SettingsData"/> process is hidden.
         /// </summary>
         /// <value><c>true</c> if process is hidden; otherwise, <c>false</c>.</value>
         public bool ProcessIsHidden { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:PublicDomain.SettingsData"/> class.
+        /// </summary>
+        public SettingsData()
+        {
+            // Parameterless constructor
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:PublicDomain.SettingsData"/> class.
