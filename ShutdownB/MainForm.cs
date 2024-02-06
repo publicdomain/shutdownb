@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Forms;
 using System.Reflection;
 using PublicDomain;
+using System.IO;
 
 namespace ShutdownB
 {
@@ -25,6 +26,11 @@ namespace ShutdownB
         /// </summary>
         /// <value>The associated icon.</value>
         private Icon associatedIcon = null;
+
+        /// <summary>
+        /// The settings data.
+        /// </summary>
+        private SettingsData settingsData = null;
 
         /// <summary>
         /// Gets the cursor position.
@@ -93,6 +99,22 @@ namespace ShutdownB
 
             // Set associated icon from exe file
             this.associatedIcon = Icon.ExtractAssociatedIcon(typeof(MainForm).GetTypeInfo().Assembly.Location);
+
+            /* Settings */
+
+            // Set the settings data
+            this.settingsData = new SettingsData(Path.Combine(Application.StartupPath, $"{ Application.ProductName }-SettingsData.txt"), false);
+
+            // Set TIMP executable path
+            string timpExecutablePath = Path.Combine(Application.StartupPath, "TIMP.exe");
+
+            // Check for TIMP
+            if (this.settingsData.ProcessFileName.Length == 0 && File.Exists(timpExecutablePath))
+            {
+                // Set TIMP process properties
+                this.settingsData.ProcessFileName = timpExecutablePath;
+                this.settingsData.ProcessArguments = "/play current";
+            }
 
             /* Set timer */
 
@@ -613,9 +635,9 @@ namespace ShutdownB
         {
             // Subtract current values
             this.actionRunDateTime = this.actionRunDateTime
-                .Subtract(TimeSpan.FromMinutes((int)this.hourNumericUpDown.Value))
+                .Subtract(TimeSpan.FromHours((int)this.hourNumericUpDown.Value))
                 .Subtract(TimeSpan.FromMinutes((int)this.minuteNumericUpDown.Value))
-                .Subtract(TimeSpan.FromMinutes((int)this.secondNumericUpDown.Value));
+                .Subtract(TimeSpan.FromSeconds((int)this.secondNumericUpDown.Value));
 
 
             // Update the happening at label
@@ -708,6 +730,5 @@ namespace ShutdownB
             // Close program        
             this.Close();
         }
-
     }
 }
