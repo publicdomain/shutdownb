@@ -178,7 +178,7 @@ namespace ShutdownB
         private void SetTimerLabel()
         {
             // Advise: action + time left to run it
-            this.timerLabel.Text = $"{this.actionName} {(this.actionRunDateTime - DateTime.Now).ToString(@"hh\:mm\:ss")}";
+            this.timerLabel.Text = $"{this.actionName} {((DateTime.Now >= this.actionRunDateTime) ? "00:00:00" : (this.actionRunDateTime - DateTime.Now).ToString(@"hh\:mm\:ss"))}";
         }
 
         /// <summary>
