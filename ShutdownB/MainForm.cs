@@ -121,7 +121,7 @@ namespace ShutdownB
             // Create a timer and set a two second interval.
             this.actionTimer = new System.Timers.Timer
             {
-                Interval = 1000 // One second
+                Interval = 250 // Four times per second
             };
 
             // Hook the event up
@@ -349,7 +349,8 @@ namespace ShutdownB
         /// <param name="e">E.</param>
         private void OnMainFormFormClosing(object sender, FormClosingEventArgs e)
         {
-            // TODO Add code if needed
+            // Save settings file
+            this.settingsData.SaveSettingsFile();
         }
 
         /// <summary>
@@ -647,7 +648,7 @@ namespace ShutdownB
             var aboutForm = new AboutForm(
                 $"About {programTitle}",
                 $"{programTitle} {version.Major}.{version.Minor}.{version.Build}",
-                $"Made for: luvnbeast{Environment.NewLine}DonationCoder.com{Environment.NewLine}Day #032, Week #05 @ February 01, 2024",
+                $"Made for: luvnbeast{Environment.NewLine}DonationCoder.com{Environment.NewLine}Day #037, Week #06 @ February 06, 2024",
                 licenseText,
                 this.Icon.ToBitmap())
             {
