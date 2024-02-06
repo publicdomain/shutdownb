@@ -122,40 +122,49 @@ namespace ShutdownB
             // Check if it's time to run
             if (DateTime.Now >= this.actionRunDateTime)
             {
-                // Disable the action timer
+                // TODO Disable the action timer [Zero it as well]
                 this.actionTimer.Enabled = false;
 
-                // Run the action
-                switch (this.actionComboBox.Text)
+                // Check for alarm by combobox's disabled status
+                if (this.actionComboBox.Enabled == false)
                 {
-                    case "Shut down":
-                        this.ShutdownNow();
+                    // Run the command
+                    MessageBox.Show("Alarm command");
+                }
+                else
+                {
+                    // Run the action
+                    switch (this.actionComboBox.Text)
+                    {
+                        case "Shut down":
+                            this.ShutdownNow();
 
-                        break;
+                            break;
 
-                    case "Hibernate":
-                        this.HibernateNow();
+                        case "Hibernate":
+                            this.HibernateNow();
 
-                        break;
+                            break;
 
-                    case "Lock":
-                        this.LockNow();
+                        case "Lock":
+                            this.LockNow();
 
-                        break;
-                    case "Log off":
-                        this.LogoffNow();
+                            break;
+                        case "Log off":
+                            this.LogoffNow();
 
-                        break;
+                            break;
 
-                    case "Sleep":
-                        this.SleepNow();
+                        case "Sleep":
+                            this.SleepNow();
 
-                        break;
+                            break;
 
-                    case "Restart":
-                        this.RestartNow();
+                        case "Restart":
+                            this.RestartNow();
 
-                        break;
+                            break;
+                    }
                 }
 
                 // Exit the program
@@ -191,8 +200,19 @@ namespace ShutdownB
             this.actionSetDateTime = DateTime.Now;
             this.actionRunDateTime = this.actionSetDateTime.AddHours(hours).AddMinutes(minutes).AddSeconds(seconds);
 
-            // Set action combo box to matching item
-            this.actionComboBox.SelectedIndex = this.actionComboBox.FindStringExact(actionName);
+            // TODO Check for alarm [Enabling and disabling can be more elaborate]
+            if (actionName == "Alarm")
+            {
+                // Deselect and disable the action combo box
+                this.actionComboBox.SelectedIndex = -1;
+                this.actionComboBox.Enabled = false;
+            }
+            else
+            {
+                // Enable and set action combo box to matching item
+                this.actionComboBox.Enabled = true;
+                this.actionComboBox.SelectedIndex = this.actionComboBox.FindStringExact(actionName);
+            }
 
             // Update the happening at label
             this.UpdateHappeningAtLabel();
@@ -448,9 +468,68 @@ namespace ShutdownB
             this.SetAction(actionName, hours, minutes, seconds);
         }
 
+        /// <summary>
+        /// Handles the alarm tool strip menu item drop down item clicked.
+        /// </summary>
+        /// <param name="sender">Sender.</param>
+        /// <param name="e">E.</param>
         private void OnAlarmToolStripMenuItemDropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
+            // Set the time integers
+            int hours = 0, minutes = 0, seconds = 0;
 
+            // Switch by name
+            switch (e.ClickedItem.Name)
+            {
+                // 10 minutes
+                case "soundIn10MinutesToolStripMenuItem":
+                    minutes = 10;
+
+                    break;
+
+                // 30 minutes
+                case "soundIn30MinutesToolStripMenuItem":
+                    minutes = 30;
+
+                    break;
+
+                // 1 hour
+                case "soundIn1HourToolStripMenuItem":
+                    hours = 1;
+
+                    break;
+
+                // 2 hours
+                case "soundIn2HoursToolStripMenuItem":
+                    hours = 2;
+
+                    break;
+
+                // Custom time
+                case "soundInCustomTimeToolStripMenuItem":
+
+                    // Open the custom time dialog
+                    using (var customTimeSpanForm = new CustomTimeSpanForm())
+                    {
+                        // Show the dialog and check result
+                        if (customTimeSpanForm.ShowDialog() != DialogResult.OK)
+                        {
+                            // Halt program's flow
+                            this.Close();
+                            return;
+                        }
+
+                        // Set
+                        hours = customTimeSpanForm.CustomTimeSpan.Hours;
+                        minutes = customTimeSpanForm.CustomTimeSpan.Minutes;
+                        seconds = customTimeSpanForm.CustomTimeSpan.Seconds;
+                    }
+
+                    break;
+            }
+
+            // Set the action
+            this.SetAction("Alarm", hours, minutes, seconds);
         }
 
         private void OnSettingsToolStripMenuItemDropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
