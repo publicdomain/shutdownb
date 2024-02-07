@@ -515,7 +515,7 @@ namespace ShutdownB
                 // Custom
                 default:
                     // Open the custom time dialog
-                    using (var customTimeSpanForm = new CustomTimeSpanForm())
+                    using (var customTimeSpanForm = new CustomTimeSpanForm(new TimeSpan(this.settingsData.DefaultHours, this.settingsData.DefaultMinutes, this.settingsData.DefaultSeconds)))
                     {
                         // Show the dialog and check result
                         if (customTimeSpanForm.ShowDialog() != DialogResult.OK)
@@ -579,7 +579,7 @@ namespace ShutdownB
                 case "soundInCustomTimeToolStripMenuItem":
 
                     // Open the custom time dialog
-                    using (var customTimeSpanForm = new CustomTimeSpanForm())
+                    using (var customTimeSpanForm = new CustomTimeSpanForm(new TimeSpan(this.settingsData.DefaultHours, this.settingsData.DefaultMinutes, this.settingsData.DefaultSeconds)))
                     {
                         // Show the dialog and check result
                         if (customTimeSpanForm.ShowDialog() != DialogResult.OK)
@@ -602,9 +602,49 @@ namespace ShutdownB
             this.SetAction("Alarm", hours, minutes, seconds);
         }
 
+        /// <summary>
+        /// Handles the settings tool strip menu item drop down item clicked.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
         private void OnSettingsToolStripMenuItemDropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
+            // Switch by name
+            switch (e.ClickedItem.Name)
+            {
+                // Alarm command
+                case "alarmSoundCommandToolStripMenuItem":
+                case "alarmSoundCommandToolStripMenuItem1":
 
+
+                    break;
+
+                // Default custom time
+                case "defaultCustomTimeToolStripMenuItem":
+                case "defaultCustomTimeToolStripMenuItem1":
+
+                    // Open the custom time dialog
+                    using (var customTimeSpanForm = new CustomTimeSpanForm(new TimeSpan(this.settingsData.DefaultHours, this.settingsData.DefaultMinutes, this.settingsData.DefaultSeconds)))
+                    {
+                        // Show the dialog and check result
+                        if (customTimeSpanForm.ShowDialog() == DialogResult.OK)
+                        {
+                            // Set into settings
+                            this.settingsData.DefaultHours = customTimeSpanForm.CustomTimeSpan.Hours;
+                            this.settingsData.DefaultMinutes = customTimeSpanForm.CustomTimeSpan.Minutes;
+                            this.settingsData.DefaultSeconds = customTimeSpanForm.CustomTimeSpan.Seconds;
+                        }
+                    }
+
+                    // Check if must close
+                    if (e.ClickedItem.Name == "defaultCustomTimeToolStripMenuItem")
+                    {
+                        // Exit program
+                        this.Close();
+                    }
+
+                    break;
+            }
         }
 
         /// <summary>

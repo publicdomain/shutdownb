@@ -21,40 +21,22 @@ namespace PublicDomain
         public string SettingsDataPath { get; set; }
 
         /// <summary>
-        /// Gets or sets the hour.
+        /// Gets or sets the default hours.
         /// </summary>
-        /// <value>The hour.</value>
-        public int Hour { get; set; }
+        /// <value>The default hours.</value>
+        public int DefaultHours { get; set; }
 
         /// <summary>
-        /// Gets or sets the minute.
+        /// Gets or sets the default minutes.
         /// </summary>
-        /// <value>The minute.</value>
-        public int Minute { get; set; } = 15;
+        /// <value>The default minutes.</value>
+        public int DefaultMinutes { get; set; } = 15;
 
         /// <summary>
-        /// Gets or sets the second.
+        /// Gets or sets the default seconds.
         /// </summary>
-        /// <value>The second.</value>
-        public int Second { get; set; }
-
-        /// <summary>
-        /// Gets or sets the default hour.
-        /// </summary>
-        /// <value>The default hour.</value>
-        public int DefaultHour { get; set; }
-
-        /// <summary>
-        /// Gets or sets the default minute.
-        /// </summary>
-        /// <value>The default minute.</value>
-        public int DefaultMinute { get; set; } = 15;
-
-        /// <summary>
-        /// Gets or sets the default second.
-        /// </summary>
-        /// <value>The default second.</value>
-        public int DefaultSecond { get; set; }
+        /// <value>The default seconds.</value>
+        public int DefaultSeconds { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the process file.

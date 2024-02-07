@@ -52,6 +52,10 @@
     <Compile Include="AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AlarmCommandForm.cs" />
+    <Compile Include="AlarmCommandForm.Designer.cs">
+      <DependentUpon>AlarmCommandForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomTimeSpanForm.cs" />
     <Compile Include="CustomTimeSpanForm.Designer.cs">
       <DependentUpon>CustomTimeSpanForm.cs</DependentUpon>
@@ -71,6 +75,9 @@
   <ItemGroup>
     <EmbeddedResource Include="AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlarmCommandForm.resx">
+      <DependentUpon>AlarmCommandForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomTimeSpanForm.resx">
       <DependentUpon>CustomTimeSpanForm.cs</DependentUpon>

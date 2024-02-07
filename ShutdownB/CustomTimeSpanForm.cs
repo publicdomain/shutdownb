@@ -19,10 +19,18 @@ namespace ShutdownB
         /// <summary>
         /// Initializes a new instance of the <see cref="T:ShutdownB.CustomTimeSpanForm"/> class.
         /// </summary>
-        public CustomTimeSpanForm()
+        public CustomTimeSpanForm(TimeSpan customTimeSpan)
         {
             // The InitializeComponent() call is required for Windows Forms designer support.
             this.InitializeComponent();
+
+            // Set the custom timespan
+            this.CustomTimeSpan = customTimeSpan;
+
+            // Set the passed values
+            this.hourNumericUpDown.Value = this.CustomTimeSpan.Hours;
+            this.minuteNumericUpDown.Value = this.CustomTimeSpan.Minutes;
+            this.secondNumericUpDown.Value = this.CustomTimeSpan.Seconds;
         }
 
         /// <summary>
@@ -32,7 +40,7 @@ namespace ShutdownB
         /// <param name="e">Event arguments.</param>
         private void OnSetCustomTimeButtonClick(object sender, EventArgs e)
         {
-            // Set the timespan on passed main form
+            // Set the custom timespan 
             this.CustomTimeSpan = new TimeSpan((int)this.hourNumericUpDown.Value, (int)this.minuteNumericUpDown.Value, (int)this.secondNumericUpDown.Value);
 
             // Set dialog result
