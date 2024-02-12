@@ -52,36 +52,40 @@ namespace ShutdownB
         /// <param name="e">Event arguments.</param>
         private void OnSetAlarmCommandButtonClick(object sender, EventArgs e)
         {
-            // Set instance values
-            this.FilePath = this.filePathTextBox.Text;
-            this.Arguments = this.argumentsTextBox.Text;
-            this.IsHidden = this.isHiddencheckBox.Checked;
+            // Check file path's length
+            if (this.filePathTextBox.Text.Length > 0)
+            {
+                // Set instance values
+                this.FilePath = this.filePathTextBox.Text;
+                this.Arguments = this.argumentsTextBox.Text;
+                this.IsHidden = this.isHiddencheckBox.Checked;
 
-            // Set dialog result
-            this.DialogResult = DialogResult.OK;
+                // Set dialog result
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                // Set dialog result
+                this.DialogResult = DialogResult.Cancel;
+            }
 
             // Close the form
             this.Close();
         }
 
         /// <summary>
-        /// Handlesthe alarm command form preview key down.
+        /// Handles the alarm command form key down.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
-        private void OnAlarmCommandFormPreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        private void OnAlarmCommandFormKeyDown(object sender, KeyEventArgs e)
         {
-            // Check for escape key
+            // Check for escape
             if (e.KeyCode == Keys.Escape)
             {
                 // Close the program
                 Application.Exit();
             }
-        }
-        
-        void OnAlarmCommandFormKeyDown(object sender, KeyEventArgs e)
-        {
-        	
         }
     }
 }
