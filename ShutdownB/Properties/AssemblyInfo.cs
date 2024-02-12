@@ -12,10 +12,10 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("ShutdownB")]
 [assembly: AssemblyDescription("Shut down your computer with a timer and a plus!")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("PublicDomain.is")]
+[assembly: AssemblyCompany("Paradisus.is")]
 [assembly: AssemblyProduct("ShutdownB")]
 [assembly: AssemblyCopyright("Copyright 2024 - Victor L. Senior")]
-[assembly: AssemblyTrademark("publicdomain")]
+[assembly: AssemblyTrademark("Paradisus.is")]
 [assembly: AssemblyCulture("")]
 
 // This sets the default COM visibility of types in the assembly to invisible.

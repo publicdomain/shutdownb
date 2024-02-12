@@ -682,12 +682,6 @@ namespace ShutdownB
             var licenseText = $"CC0 1.0 Universal (CC0 1.0) - Public Domain Dedication{Environment.NewLine}" +
                 $"https://creativecommons.org/publicdomain/zero/1.0/legalcode{Environment.NewLine}{Environment.NewLine}" +
                 $"Libraries and icons have separate licenses.{Environment.NewLine}{Environment.NewLine}" +
-                $"SharpClipboard by Willy-Kimura - MIT License{Environment.NewLine}" +
-                $"https://github.com/Willy-Kimura/SharpClipboard{Environment.NewLine}{Environment.NewLine}" +
-                $"Clipboard-paper icon by OpenClipart-Vectors - Pixabay's Content license{Environment.NewLine}" +
-                $"https://pixabay.com/vectors/icon-icons-matt-shutdown-symbol-1294532/{Environment.NewLine}{Environment.NewLine}" +
-                $"Buttons icon by Clker-Free-Vector-Images - Pixabay's Content license{Environment.NewLine}" +
-                $"https://pixabay.com/vectors/buttons-stop-play-pause-record-35531/{Environment.NewLine}{Environment.NewLine}" +
                 $"Patreon icon used according to published brand guidelines{Environment.NewLine}" +
                 $"https://www.patreon.com/brand{Environment.NewLine}{Environment.NewLine}" +
                 $"GitHub mark icon used according to published logos and usage guidelines{Environment.NewLine}" +
