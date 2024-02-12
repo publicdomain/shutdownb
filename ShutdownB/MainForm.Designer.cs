@@ -758,7 +758,7 @@ namespace ShutdownB
         	this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
         	this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
         	this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-        	this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+        	this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 43F));
         	this.tableLayoutPanel2.Controls.Add(this.minuteSecondSeparatorLabel, 4, 0);
         	this.tableLayoutPanel2.Controls.Add(this.subtractButton, 0, 0);
         	this.tableLayoutPanel2.Controls.Add(this.addButton, 6, 0);
@@ -780,7 +780,7 @@ namespace ShutdownB
         	this.minuteSecondSeparatorLabel.Dock = System.Windows.Forms.DockStyle.Fill;
         	this.minuteSecondSeparatorLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
         	this.minuteSecondSeparatorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        	this.minuteSecondSeparatorLabel.Location = new System.Drawing.Point(156, 0);
+        	this.minuteSecondSeparatorLabel.Location = new System.Drawing.Point(155, 0);
         	this.minuteSecondSeparatorLabel.Margin = new System.Windows.Forms.Padding(0);
         	this.minuteSecondSeparatorLabel.Name = "minuteSecondSeparatorLabel";
         	this.minuteSecondSeparatorLabel.Size = new System.Drawing.Size(10, 35);
@@ -804,9 +804,9 @@ namespace ShutdownB
         	// 
         	this.addButton.Dock = System.Windows.Forms.DockStyle.Fill;
         	this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        	this.addButton.Location = new System.Drawing.Point(227, 3);
+        	this.addButton.Location = new System.Drawing.Point(226, 3);
         	this.addButton.Name = "addButton";
-        	this.addButton.Size = new System.Drawing.Size(37, 29);
+        	this.addButton.Size = new System.Drawing.Size(38, 29);
         	this.addButton.TabIndex = 1;
         	this.addButton.Text = ">";
         	this.addButton.UseVisualStyleBackColor = true;
@@ -823,7 +823,7 @@ namespace ShutdownB
         	        	        	0,
         	        	        	0});
         	this.hourNumericUpDown.Name = "hourNumericUpDown";
-        	this.hourNumericUpDown.Size = new System.Drawing.Size(52, 22);
+        	this.hourNumericUpDown.Size = new System.Drawing.Size(51, 22);
         	this.hourNumericUpDown.TabIndex = 2;
         	this.hourNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
         	// 
@@ -831,7 +831,7 @@ namespace ShutdownB
         	// 
         	this.minuteNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
         	this.minuteNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        	this.minuteNumericUpDown.Location = new System.Drawing.Point(101, 3);
+        	this.minuteNumericUpDown.Location = new System.Drawing.Point(100, 3);
         	this.minuteNumericUpDown.Maximum = new decimal(new int[] {
         	        	        	59,
         	        	        	0,
@@ -851,7 +851,7 @@ namespace ShutdownB
         	// 
         	this.secondNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
         	this.secondNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        	this.secondNumericUpDown.Location = new System.Drawing.Point(169, 3);
+        	this.secondNumericUpDown.Location = new System.Drawing.Point(168, 3);
         	this.secondNumericUpDown.Maximum = new decimal(new int[] {
         	        	        	59,
         	        	        	0,
@@ -867,7 +867,7 @@ namespace ShutdownB
         	this.hourMinuteSeparatorLabel.Dock = System.Windows.Forms.DockStyle.Fill;
         	this.hourMinuteSeparatorLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
         	this.hourMinuteSeparatorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        	this.hourMinuteSeparatorLabel.Location = new System.Drawing.Point(88, 0);
+        	this.hourMinuteSeparatorLabel.Location = new System.Drawing.Point(87, 0);
         	this.hourMinuteSeparatorLabel.Margin = new System.Windows.Forms.Padding(0);
         	this.hourMinuteSeparatorLabel.Name = "hourMinuteSeparatorLabel";
         	this.hourMinuteSeparatorLabel.Size = new System.Drawing.Size(10, 35);

@@ -247,7 +247,7 @@ namespace ShutdownB
         private void SetTimerLabel()
         {
             // Advise: action + time left to run it
-            this.timerLabel.Text = $"{this.actionName} {((DateTime.Now >= this.actionRunDateTime) ? "00:00:00" : (this.actionRunDateTime - DateTime.Now).ToString(@"hh\:mm\:ss"))}";
+            //#            this.timerLabel.Text = $"{this.actionName} {((DateTime.Now >= this.actionRunDateTime) ? "00:00:00" : (this.actionRunDateTime - DateTime.Now).ToString(@"hh\:mm\:ss"))}";
         }
 
         /// <summary>
@@ -615,7 +615,28 @@ namespace ShutdownB
                 // Alarm command
                 case "alarmSoundCommandToolStripMenuItem":
                 case "alarmSoundCommandToolStripMenuItem1":
+                    // Open the alarm command dialog
+                    using (var alarmCommandForm = new AlarmCommandForm(this.settingsData.ProcessFileName, this.settingsData.ProcessArguments, this.settingsData.ProcessIsHidden))
+                    {
+                        // Set the icon
+                        alarmCommandForm.Icon = this.Icon;
 
+                        // Show the dialog and check result
+                        if (alarmCommandForm.ShowDialog() == DialogResult.OK)
+                        {
+                            // Set into settings
+                            this.settingsData.ProcessFileName = alarmCommandForm.FilePath;
+                            this.settingsData.ProcessArguments = alarmCommandForm.Arguments;
+                            this.settingsData.ProcessIsHidden = alarmCommandForm.IsHidden;
+                        }
+                    }
+
+                    // Check if must close
+                    if (e.ClickedItem.Name == "alarmSoundCommandToolStripMenuItem")
+                    {
+                        // Exit program
+                        this.Close();
+                    }
 
                     break;
 
@@ -626,6 +647,9 @@ namespace ShutdownB
                     // Open the custom time dialog
                     using (var customTimeSpanForm = new CustomTimeSpanForm(new TimeSpan(this.settingsData.DefaultHours, this.settingsData.DefaultMinutes, this.settingsData.DefaultSeconds)))
                     {
+                        // Set the icon
+                        customTimeSpanForm.Icon = this.Icon;
+
                         // Show the dialog and check result
                         if (customTimeSpanForm.ShowDialog() == DialogResult.OK)
                         {
@@ -688,7 +712,7 @@ namespace ShutdownB
             var aboutForm = new AboutForm(
                 $"About {programTitle}",
                 $"{programTitle} {version.Major}.{version.Minor}.{version.Build}",
-                $"Made for: luvnbeast{Environment.NewLine}DonationCoder.com{Environment.NewLine}Day #037, Week #06 @ February 06, 2024",
+                $"Made for: luvnbeast{Environment.NewLine}DonationCoder.com{Environment.NewLine}Day #042, Week #06 @ February 11, 2024",
                 licenseText,
                 this.Icon.ToBitmap())
             {

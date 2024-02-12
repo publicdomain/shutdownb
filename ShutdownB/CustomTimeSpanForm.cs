@@ -51,21 +51,6 @@ namespace ShutdownB
         }
 
         /// <summary>
-        /// Processes the dialog key.
-        /// </summary>
-        /// <returns><c>true</c>, if dialog key was processed, <c>false</c> otherwise.</returns>
-        /// <param name="keyData">Key data.</param>
-        protected override bool ProcessDialogKey(Keys keyData)
-        {
-            if (Form.ModifierKeys == Keys.None && keyData == Keys.Escape)
-            {
-                this.Close();
-                return true;
-            }
-            return base.ProcessDialogKey(keyData);
-        }
-
-        /// <summary>
         /// Handles the custom time span form form closing.
         /// </summary>
         /// <param name="sender">Sender object.</param>
@@ -73,6 +58,21 @@ namespace ShutdownB
         private void OnCustomTimeSpanFormFormClosing(object sender, FormClosingEventArgs e)
         {
             // TODO Add code if needed
+        }
+
+        /// <summary>
+        /// Handles the custom time span form key down.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
+        private void OnCustomTimeSpanFormKeyDown(object sender, KeyEventArgs e)
+        {
+            // Check for escape
+            if (e.KeyCode == Keys.Escape)
+            {
+                // Close the program
+                Application.Exit();
+            }
         }
     }
 }
