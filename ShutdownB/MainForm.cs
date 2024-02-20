@@ -247,7 +247,7 @@ namespace ShutdownB
         private void SetTimerLabel()
         {
             // Advise: action + time left to run it
-            //#            this.timerLabel.Text = $"{this.actionName} {((DateTime.Now >= this.actionRunDateTime) ? "00:00:00" : (this.actionRunDateTime - DateTime.Now).ToString(@"hh\:mm\:ss"))}";
+            this.timerLabel.Text = $"{this.actionName} {((DateTime.Now >= this.actionRunDateTime) ? "00:00:00" : (this.actionRunDateTime - DateTime.Now).ToString(@"hh\:mm\:ss"))}";
         }
 
         /// <summary>
@@ -706,7 +706,7 @@ namespace ShutdownB
             var aboutForm = new AboutForm(
                 $"About {programTitle}",
                 $"{programTitle} {version.Major}.{version.Minor}.{version.Build}",
-                $"Made for: luvnbeast{Environment.NewLine}DonationCoder.com{Environment.NewLine}Day #042, Week #06 @ February 11, 2024",
+                $"Made for: luvnbeast{Environment.NewLine}DonationCoder.com{Environment.NewLine}Day #051, Week #08 @ February 20, 2024",
                 licenseText,
                 this.Icon.ToBitmap())
             {
